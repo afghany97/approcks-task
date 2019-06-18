@@ -29,6 +29,10 @@ class BoardsController extends Controller
 
             $board = auth()->user()->boards()->create(dataFromRequest(['name']));
 
+            foreach (config('record.default') as $name)
+
+                $board->records()->create(compact('name'));
+
         } catch (QueryException $exception) {
 
             // handle exception
