@@ -12,4 +12,13 @@ class Board extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
+    public function records()
+    {
+        return $this->hasMany(Record::class);
+    }
 }
