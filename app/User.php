@@ -45,4 +45,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Board::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
+    public function issues()
+    {
+        return $this->hasMany(Issue::class);
+    }
 }
