@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Board;
 use App\Http\Requests\CreateIssueRequest;
+use App\Http\Requests\UpdateIssueRequest;
 use App\Issue;
 
 class IssuesController extends Controller
@@ -17,26 +17,34 @@ class IssuesController extends Controller
         $this->middleware('auth');
     }
 
-    public function store(Board $board,CreateIssueRequest $issueRequest)
-    {
-        $issue = Issue::create(dataFromRequest(['title','description','user_id','record_id']));
+    /**
+     * @param CreateIssueRequest $issueRequest
+     * @return mixed
+     */
 
-        // store image if found
+    public function store(CreateIssueRequest $issueRequest)
+    {
+        $issue = Issue::create(dataFromRequest(['title','description','user_id','record_id','deadline']));
 
         if(request()->hasFile('attachment')){
 
-            // determine attachment type
+            $issue->image(request()->file('attachment')->store("images/issues/{$issue->id}/","public"));
 
-            // if image
-
-                $issue->image(request()->file('attachment')->storeAs("images/issues/{$issue->id}/","public"));
-
-            // if video
-
-                $issue->video(request()->file('attachment')->storeAs("videos/issues/{$issue->id}/","public"));
         }
 
+        return $issue->load(['media']);
+    }
 
-        // return response
+    /**
+     * @param Issue $issue
+     * @param UpdateIssueRequest $issueRequest
+     * @return Issue
+     */
+
+    public function update(Issue $issue, UpdateIssueRequest $issueRequest)
+    {
+        $issue->update(request()->only(['title','description','user_id']));
+
+        return $issue->load(['media','user']);
     }
 }

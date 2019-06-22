@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('boards','BoardsController');
+
+Route::post('boards/{board}/{record}/{issue}/update','RecordIssuesController@update')->name('record.issues.update');
+
+Route::resource('issues','IssuesController');
+
+Route::post('issues/{issue}/comments','CommentsController@store')->name('issue.comments.store');

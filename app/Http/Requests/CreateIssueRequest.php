@@ -27,7 +27,9 @@ class CreateIssueRequest extends FormRequest
             'title' => 'required|string',
             'description' => 'required|string',
             'user_id' => 'required|numeric|exists:users,id',
-            'record_id' => 'required|numeric|exists:records,id'
+            'record_id' => 'required|numeric|exists:records,id',
+            'attachment' => 'file|image',
+            'deadline' => 'required|date'
         ];
     }
 }

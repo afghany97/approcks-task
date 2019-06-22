@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCommentRequest;
 use App\Issue;
 
 class CommentsController extends Controller
@@ -15,16 +16,22 @@ class CommentsController extends Controller
         $this->middleware('auth');
     }
 
-    public function store(Issue $issue)
+    /**
+     * @param Issue $issue
+     * @param CreateCommentRequest $commentRequest
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+
+    public function store(Issue $issue, CreateCommentRequest $commentRequest)
     {
-        $commnet = $issue->comments()->create(array_merge(dataFromRequest(['body']),['user_id' => auth()->id()]));
+        $comment = $issue->comments()->create(array_merge(dataFromRequest(['body']),['user_id' => auth()->id()]));
 
         if(request()->hasFile('attachment')){
 
-            // store the file
+            $comment->image(request()->file('attachment')->store("images/comments/{$comment->id}/",'public'));
         }
 
-        return;
+        return $comment->load(['user','media']);
     }
 
 }

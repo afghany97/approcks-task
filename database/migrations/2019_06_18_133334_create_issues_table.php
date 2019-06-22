@@ -21,6 +21,7 @@ class CreateIssuesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
             $table->string('title');
             $table->string('description');
+            $table->date('deadline');
             $table->timestamps();
         });
     }

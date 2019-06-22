@@ -8,6 +8,8 @@ class Issue extends Model
 {
     use Mediable;
 
+    protected $with = ['comments','media','user'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

@@ -1,0 +1,418 @@
+/*start of top navbar style */
+
+nav
+{
+    background-color: rgb(41, 42, 60) !important;
+    padding: 10px;
+    height: 60px;
+}
+nav .humburger-button
+{
+    margin-top:7px;
+}
+nav .humburger-button span
+{
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: rgb(79, 80, 101);
+    margin-top: 3px;
+    border-radius: 50px;
+}
+nav .drop-down
+{
+    border-left: 1px solid rgb(72, 72, 72);
+    padding-left: 30px;
+    font-weight: bold;
+    margin-top:7px;
+}
+nav .drop-down p
+{
+    color: #FFF;
+    display: inline;
+    margin-right: 10px;
+}
+nav .drop-down svg
+{
+    color: #FFF;
+    display: inline-block ;
+    margin-left: 5px
+}
+nav .search-bar
+{
+    display: inline;
+}
+nav .search-bar input
+{
+    height: 34px;
+    width: 425px !important;
+    margin-top: 2px;
+}
+nav .float-right svg
+{
+    color: #FFF;
+    display: inline-block ;
+    margin-left: 20px
+}
+nav img
+{
+    width:30px;
+    height: 30px;
+    margin-left: 20px;
+}
+nav .blue-cover
+{
+    display:inline-block;
+    background-color: rgb(0, 225, 255);
+    border-radius: 50%;
+    width:30px;
+    height:30px;
+    margin-left: 20px;
+    margin-right: 50px;
+    padding: 0px;
+    
+}
+nav .blue-cover svg
+{
+    display: inline-block;
+    margin-left: 7.75px;
+    vertical-align: middle;
+}
+
+
+
+/*end of top navbar */
+
+
+
+
+
+
+
+
+
+/* start of left navbar style*/
+
+
+.main .col-md-2
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.left-navbar
+{
+    height: 39.75rem;
+    background-color:  rgb(41, 42, 60);
+    padding: 10px;
+    color: #CCC;
+    position: fixed;
+    width: 227.5px;
+    margin-top: 60px
+
+}
+.left-navbar .item 
+{
+    margin-bottom: 20px;
+}
+.left-navbar .item:hover
+{
+    color: rgb(148, 0, 255);
+    cursor: pointer;
+}
+.active
+{
+    color: rgb(148, 0, 255);
+}
+
+/* end of left navbar style*/
+
+
+
+
+
+
+
+
+
+/* start of main page style*/
+
+
+
+
+
+
+
+.main .col-md-10
+{
+    margin-top: 60px;
+}
+
+
+
+
+/*project name button */
+
+.dropdown .project-name-button
+{
+    background-color:  rgb(148, 0, 255);
+    margin-top: 20px;
+    border-radius: 100px;
+    width: 170px;
+    display: block;
+    border: none;
+    color: #FFF;
+}
+.dropdown button:hover
+,.dropdown button:active
+{
+    
+    border: none;
+}
+
+
+
+
+
+
+/*taged people section */
+
+.taged-people p
+{
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+.taged-people img
+{
+    width: 25px;
+    margin-right: -10px;
+}
+.taged-people span
+{
+    background-color: #ddd;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    padding: 2px;
+    
+}
+
+
+
+
+
+
+/*new task button */
+
+.new-task-button
+{
+    background-color:  rgb(0, 225, 255);
+    margin-top: 20px;
+    border-radius: 100px;
+    width: 140px;
+    display: block;
+    border: none;
+    color: #FFF;
+    
+}
+.new-task-button svg
+{
+    margin-right: 10px;
+}
+
+
+
+
+
+/*filters items*/
+
+.filters .filter-item
+{
+    float: left;
+    margin-left: 33px
+    
+}
+.filters .filter-item .dropdown button
+{
+    background-color: #eee;
+    border-radius: 10px;
+    width: 155px;
+    height: 35px;
+    border: none;
+    color: #AAA;
+    display: block;
+    
+}
+.filters .filter-item .dropdown button:hover
+,.filters .filter-item .dropdown button:active
+{  
+    border: none;
+}
+.filters .filter-item .search-bar input
+{
+    width: 300px;
+    height: 35px;
+    background: #eee;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*task navigation bar*/
+
+.task-navigation-bar .col-md-12
+{
+    padding: 0;
+    margin-left: 3px;
+}
+.task-navigation-bar .steps
+{
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    line-height: 1;
+    box-sizing: border-box;
+    padding-left: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+.task-navigation-bar .steps li {
+    display: inline-block;
+    position: relative;
+    padding: 1em 2em 1em 3em;
+    vertical-align: top;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 220px;
+    height: 50px;
+    
+}
+.task-navigation-bar .steps li:after{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    content: "";
+    top: 0.36em;
+    right: -1.2em;
+    width: 3.4em;
+    height: 3.4em;
+    background-color: #fff;
+    transform: rotate(-45deg);
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.task-navigation-bar .steps li:first-child {
+    padding-left: 2.5em;
+}
+.task-navigation-bar .steps li:last-child {
+    padding-right: 2.5em;
+}
+.task-navigation-bar .steps li span
+{
+    display: block;
+    margin-top: 7px;
+    color: lightgray;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*dashboard coluoms*/
+
+.dashboard .col
+{
+    border-right: 1px dashed #CCC;
+    height: 100%;
+}
+
+.dashboard  .project-item 
+{
+    border: 2px solid #eee;
+    padding: 5px 10px 5px 5px;
+    border-radius: 15px;
+    width: 100%;
+    margin-bottom: 20px
+}
+.dashboard  .project-item  .project-info
+{
+    border-left: 3px solid #ce0000;
+    padding-left: 5px;
+}
+.dashboard  .project-item  .project-info .media img
+{
+    margin:auto 5px !important;
+}
+.dashboard  .project-item  .project-info .media p
+{
+    color: #bcbaba;
+    font-size: 10px;
+    margin: 0;
+}
+.dashboard  .project-item  .project-info .media h6
+{
+    color: #333;
+    font-size: 10px;
+    margin: 0;
+}
+.dashboard  .project-item  .project-info .item-body
+{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.dashboard  .project-item  .project-info .item-body h6
+{
+    font-size: 13px;
+}
+
+.dashboard  .project-item  .project-info .item-body p
+{
+    color: #b2b0b0;
+    font-size: 10px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.no-style{
+    list-style: none;
+}
+
+.no-padding {
+    padding: 0px;
+}
+.hide{
+    opacity: 100%;
+}
+
+
+
+
+
+
+
+
+
+
