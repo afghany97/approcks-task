@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Board;
+use App\Comment;
 use App\Issue;
 use App\Record;
 use App\User;
@@ -51,5 +52,13 @@ $factory->define(Issue::class, function (Faker $faker) {
         'record_id' => factory(Record::class)->create()->id,
         'user_id' => factory(User::class)->create()->id,
         'deadline' => $faker->date()
+    ];
+});
+
+$factory->define(Comment::class, function (Faker $faker) {
+    return [
+        'user_id' => factory(User::class)->create()->id,
+        'issue_id' => factory(Issue::class)->create()->id,
+        'body' => $faker->sentence,
     ];
 });
