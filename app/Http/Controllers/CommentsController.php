@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CommentCreated;
 use App\Http\Requests\CreateCommentRequest;
 use App\Issue;
 
@@ -30,6 +31,8 @@ class CommentsController extends Controller
 
             $comment->image(request()->file('attachment')->store("images/comments/{$comment->id}/",'public'));
         }
+
+        CommentCreated::dispatch($issue);
 
         return $comment->load(['user','media']);
     }

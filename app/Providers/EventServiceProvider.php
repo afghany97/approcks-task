@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\CommentCreated;
+use App\Events\IssueMoved;
+use App\Listeners\NotifyIssueOwner;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -18,6 +21,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        CommentCreated::class => [
+            NotifyIssueOwner::class
+        ],
+        IssueMoved::class => [
+            NotifyIssueOwner::class
+        ]
     ];
 
     /**
