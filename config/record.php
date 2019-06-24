@@ -2,8 +2,8 @@
 
 return [
     'default' => [
-        'TODO',
-        'In Progress',
-        'Done'
+        'todo',
+        'in progress',
+        'done'
     ]
 ];

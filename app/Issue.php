@@ -27,4 +27,13 @@ class Issue extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+
+    public function record()
+    {
+        return $this->belongsTo(Record::class);
+    }
 }
