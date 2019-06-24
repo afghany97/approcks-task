@@ -144,7 +144,7 @@
 
                                 <i class="fas fa-plus"></i>
 
-                                New Task
+                                New Issue
 
                             </button>
 

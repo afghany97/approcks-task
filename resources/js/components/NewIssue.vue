@@ -139,7 +139,15 @@
                         }
                     }
                 )
-                    .then(response => this.$emit('close'))
+                    .then(response => {
+                        this.deadline = this.title = this.description = this.attachment = '';
+
+                        this.record = 'Select List';
+
+                        this.user = auth.user.id;
+
+                        this.$emit('close');
+                    })
 
                     .catch(error => console.log(error))
 
